@@ -1,130 +1,280 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Pet</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f4f6f9;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Pet</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      display: flex;
+      height: 100vh;
+    
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      width: 230px;
+      background-color: #1e73be;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .header {
-            background-color: #0b4f93;
-            color: white;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      border-bottom: 2px solid #155a96;
+    }
 
-        .header h4 {
-            margin: 0;
-            font-weight: bold;
-        }
+    .sidebar-header img {
+      height: 25px;
+      margin-right: 10px;
+    }
 
-        .form-container {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
-        }
+    header.topbar {
+      background-color: #004d91;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      border-radius: 6px 6px 0 0;
+    }
+    header.topbar .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 22px;
+    }
+    header.topbar .logo img {
+      width: 32px;
+    }
+    header.topbar .home-icon {
+      font-size: 26px;
+      cursor: pointer;
+    }
+    .menu {
+      flex: 1;
+    }
 
-        .btn-primary {
-            background-color: #0d6efd;
-            border: none;
-            font-weight: bold;
-        }
+    .menu a {
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: white;
+      font-size: 14px;
+      border-bottom: 1px solid #2a7ccc;
+      transition: background 0.3s;
+    }
 
-        .btn-danger {
-            background-color: #5a5a5a;
-            border: none;
-            font-weight: bold;
-        }
+    .menu a:hover {
+      background-color: #143450;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body, html {
+      height: 100%;
+      background: #f4f7fb;
+    }
+    /* Layout geral com menu lateral e conteúdo */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      height: 100vh;
+    }
 
-        .btn-primary:hover {
-            background-color: #004a99;
-        }
+    .menu {
+      flex: 1;
+    }
 
-        .btn-danger:hover {
-            background-color: #333;
-        }
-    </style>
-</head>
-<body class="container-fluid p-4">
+    .menu a {
+      display: block;
+      padding: 12px 20px;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      transition: background 0.3s;
+    }
 
-    <!-- HEADER -->
-    <div class="header">
-        <h4>🐦 PARAÍSO DAS AVES</h4>
-        <button class="btn btn-light btn-sm">🏠</button>
-    </div>
+    .menu a:hover {
+      background: #1f5c99;
+    }
 
-    <!-- FORMULÁRIO CADASTRO DE PET -->
-    <div class="form-container">
+    /* ===== CONTEÚDO PRINCIPAL ===== */
+    .content {
+      flex: 1;
+      padding: 20px;
+      background: #fff;
+      overflow-y: auto;
       
-        <h5 class="text-center mb-4 fw-bold">Cadastro de Pet</h5>
-        <form>
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <label class="form-label">Selecionar Cliente:</label>
-                    <select class="form-select">
-                        <option>Selecione um cliente</option>
-                        <option>Cliente 1</option>
-                        <option>Cliente 2</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label class="form-label">Nome:</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label">Raça:</label>
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label class="form-label">Espécie:</label>
-                    <input type="text" class="form-control">
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label">Porte:</label>
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-            
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label class="form-label">Sexo:</label>
-                    <select class="form-select">
-                        <option>Macho</option>
-                        <option>Fêmea</option>
-                    </select>
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label">Peso:</label>
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-            
-            <div class="mb-3">
-                <label class="form-label">Diagnóstico:</label>
-                <input type="text" class="form-control">
-            </div>
+    }
 
-            <div class="text-center">
-                <button type="reset" class="btn btn-danger me-2">Descartar</button>
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
-            </div>
-        </form>
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c7cc9;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 15px;
+    }
+
+    .form-row div {
+      flex: 1;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-descartar {
+      background: #555;
+      color: white;
+      margin-right: 10px;
+    }
+
+    .btn-cadastrar {
+      background: #2c7cc9;
+      color: white;
+    }
+
+    .btn-cadastrar:hover {
+      background: #1f5c99;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <!-- MENU LATERAL -->
+
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Logo">
+      PARAÍSO DAS AVES
     </div>
+    <div class="menu">
+      <a href="clientesCadastro.html">Gestão de Clientes</a>
+      <a class="active">Gestão de Animais</a>
+      <a href="#">Gestão de Funcionário</a>
+      <a href="#">Gestão de Fornecedor</a>
+      <a href="#">Gestão Financeira</a>
+      <a href="#">Gestão de Venda</a>
+      <a href="#">Gestão de Compra</a>
+      <a href="#">Gestão de Serviço</a>
+      <a href="#">Gestão de Agendamento</a>
+      <a href="#">Gerenciamento de estoque</a>
+      <a href="#">Cadastrar Produtos</a>
+      <a href="#">Administração do Caixa</a>
+      <a href="#">Contas a receber</a>
+      <a href="#">Contas a pagar</a>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div class="content">
+
+    <header class="topbar">
+      <div class="logo">
+        <img src="https://img.icons8.com/color/48/000000/bird--v1.png" alt="Logo" />
+        GESTÃO DE ANIMAIS
+      </div>
+      <div class="home-icon" title="Home"><button><a href="./menu.html">🏠</a></button></div>
+    </header> 
+
+      <form>
+        <label for="cliente">Selecionar Cliente:</label>
+        <select id="cliente" name="cliente">
+          <option value="">Selecione um cliente</option>
+          <option value="1">João Silva</option>
+          <option value="2">Maria Souza</option>
+        </select>
+
+        <div class="form-row">
+          <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+          </div>
+          <div>
+            <label for="raca">Raça:</label>
+            <input type="text" id="raca" name="raca">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="especie">Espécie:</label>
+            <input type="text" id="especie" name="especie">
+          </div>
+          <div>
+            <label for="porte">Porte:</label>
+            <input type="text" id="porte" name="porte">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="sexo">
+              <option value="M">Macho</option>
+              <option value="F">Fêmea</option>
+            </select>
+          </div>
+          <div>
+            <label for="peso">Peso:</label>
+            <input type="text" id="peso" name="peso">
+          </div>
+        </div>
+
+        <label for="diagnostico">Diagnóstico:</label>
+        <input type="text" id="diagnostico" name="diagnostico">
+
+        <div class="buttons">
+          <button type="reset" class="btn btn-descartar">DESCARTAR</button>
+          <button type="submit" class="btn btn-cadastrar">CADASTRAR</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
 
 </body>
 </html>
